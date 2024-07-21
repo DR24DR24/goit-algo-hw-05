@@ -61,11 +61,14 @@ print(kmp_search0(raw, pattern))
 
 
 
-print(compute_lps0("aabaa"))
-print(compute_lps("aabaa"))
+#print(compute_lps0("aabaa"))
+#print(compute_lps("aabaa"))
 
 def kmp_search(main_string, pattern):
     lps=compute_lps(pattern)
+    print(lps)
+    lps=compute_lps0(pattern)
+    print(lps)
     M = len(pattern)
     N = len(main_string)
     
@@ -75,17 +78,18 @@ def kmp_search(main_string, pattern):
         if main_string[i]==pattern[segment]:
             segment+=1
             i+=1
-        elif segment==0:
-            i+=1
+        elif segment!=0:
+            segment=lps[segment-1]
         else:
-            segment=lps[segment]-1 
+            i+=1
+
         if segment==M:
             return i-M
     return -1
 
 
 res=kmp_search("aab" , "aab")
-print(res)
+print("2",res)
 
 raw = "Цей алгоритм часто використовується в текстових редакторах та системах пошуку для ефективного знаходження підрядка в тексті."
 
@@ -94,5 +98,18 @@ pattern = "алг"
 res=kmp_search(raw , pattern)
 print(res)
 
+def read_file(name):
+    with open(name,"r") as file:
+        text=file.read().replace("\n"," ")
+    return text
+
+text=read_file("стаття 2.txt")
+
+res=kmp_search(text,"системах.  Наявність")
+print(res)
+if res>=0:
+    print(text[res:min(res+80,len(text))])
+
+    
   
 
