@@ -30,5 +30,5 @@ text=task3_readfile.read_file("стаття 2.txt")
 
 time_measurements(text,"Література", 100)
 time_measurements(text,"Література", 1000)
-time_measurements(text,"Література",100)
-time_measurements(text,"Література",1000)
+time_measurements(text,"Л ітература",100)
+time_measurements(text,"Л ітература",1000)
