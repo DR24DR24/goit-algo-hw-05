@@ -62,9 +62,9 @@ def kmp_search0(main_string, pattern):
 
 def kmp_search(main_string, pattern):
     lps=compute_lps(pattern)
-    print(lps)
-    lps=compute_lps0(pattern)
-    print(lps)
+    # print(lps)
+    # lps=compute_lps0(pattern)
+    # print(lps)
     M = len(pattern)
     N = len(main_string)
     
