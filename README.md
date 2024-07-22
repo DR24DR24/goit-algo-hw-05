@@ -130,7 +130,7 @@ For each test, three indicators are provided:
 ## Conclusion
 
 Based on the given results, the following conclusions can be drawn:
-1. **"Boyer-Moore" search** consistently outperforms the other two algorithms in terms of execution time, making it the most efficient algorithm for the tested cases.
+1. **"Boyer-Moore" search** consistently outperforms the other two algorithms in terms of execution time, making it the most efficient algorithm for the tested cases for both texts.
 2. **"KMP" search** performs well and is a reliable choice, especially considering its predictable linear time complexity in the worst case.
 3. **"Rabin-Karp" search** is the least efficient of the three, largely due to the overhead of hash calculations and potential hash collisions.
 
